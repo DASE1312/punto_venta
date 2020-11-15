@@ -56,7 +56,7 @@ class Categorias extends BaseController
 
     public function editar($id)
     {
-
+        
         $unidad = $this->categorias->where('id', $id)->first();
 
         $data = ['titulo' => 'Editar categoria', 'datos' => $unidad];
