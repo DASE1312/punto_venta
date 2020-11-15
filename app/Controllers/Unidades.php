@@ -17,11 +17,24 @@ class Unidades extends BaseController
     public function index($activo = 1)
     {
         $unidades = $this->unidades->where('activo', $activo)->findAll();
+
         $data = ['titulo' => 'Unidades', 'datos' => $unidades];
 
         echo view('header');
         echo view('nav');
         echo view('unidades/unidades', $data);
+        echo view('footer');
+    }
+
+    public function eliminados($activo = 0)
+    {
+        $unidades = $this->unidades->where('activo', $activo)->findAll();
+
+        $data = ['titulo' => 'Unidades eliminadas', 'datos' => $unidades];
+
+        echo view('header');
+        echo view('nav');
+        echo view('unidades/eliminados', $data);
         echo view('footer');
     }
 
@@ -38,15 +51,15 @@ class Unidades extends BaseController
     public function insertar()
     {
         $this->unidades->save(['nombre' => $this->request->getPost('nombre'), 'nombre_corto' => $this->request->getPost('nombre_corto')]);
-        return redirect()->to(\base_url().'/unidades');
+        return redirect()->to(\base_url() . '/unidades');
     }
 
     public function editar($id)
     {
 
-        $unidad = $this->unidades->where('id', $activo)->first();
+        $unidad = $this->unidades->where('id', $id)->first();
 
-        $data = ['titulo' => 'Editar unidad','dato'=>$unidad];
+        $data = ['titulo' => 'Editar unidad', 'datos' => $unidad];
 
         echo view('header');
         echo view('nav');
@@ -56,10 +69,20 @@ class Unidades extends BaseController
 
     public function actualizar()
     {
-        $this->unidades->save(['nombre' => $this->request->getPost('nombre'), 'nombre_corto' => $this->request->getPost('nombre_corto')]);
-        return redirect()->to(\base_url().'/unidades');
+        $this->unidades->update($this->request->getPost('id'), ['nombre' => $this->request->getPost('nombre'), 'nombre_corto' => $this->request->getPost('nombre_corto')]);
+        return redirect()->to(\base_url() . '/unidades');
     }
 
-    
+    public function eliminar($id)
+    {
+        $this->unidades->update($id, ['activo' => 0]);
+        return redirect()->to(\base_url() . '/unidades');
+    }
+
+    public function reingresar($id)
+    {
+        $this->unidades->update($id, ['activo' => 1]);
+        return redirect()->to(\base_url() . '/unidades');
+    }
 
 }

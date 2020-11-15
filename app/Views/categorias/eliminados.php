@@ -7,8 +7,7 @@
                     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
                     <div>
                         <p>
-                            <a href="<?php echo base_url(); ?>/unidades/nuevo" class="btn btn-info">Agregar</a>
-                            <a href="<?php echo base_url(); ?>/unidades/eliminados" class="btn btn-warning">Eliminados</a>
+                            <a href="<?php echo base_url(); ?>/categorias" class="btn btn-warning">Unidades</a>
                         </p>
                     </div>
                     <!-- DataTales Example -->
@@ -18,8 +17,6 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Nombre</th>
-                                            <th>Nombre corto</th>
-                                            <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -28,18 +25,14 @@
                                             <tr>
                                                 <td><?php echo $dato['id']; ?></td>
                                                 <td><?php echo $dato['nombre']; ?></td>
-                                                <td><?php echo $dato['nombre_corto']; ?></td>
 
-                                                <td><a href="<?php echo base_url().'/unidades/editar/'.$dato['id'];?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
-
-                                                <td><a href="<?php echo base_url().'/unidades/eliminar/'.$dato['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
-                                               
-                        
+                                                <td><a href="<?php echo base_url().'/categorias/reingresar/'.$dato['id'];?>"><i class="fas fa-arrow-alt-circle-up"></i></a></td>
                                             </tr>
-                                        <?php } ?>
+                                        <?php } ?> 
                                     </tbody>
                                 </table>
                             </div>
+                            
 
 
 
