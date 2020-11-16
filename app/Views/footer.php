@@ -21,5 +21,11 @@
 
 <!-- Page level custom scripts -->
 <script src="<?php echo base_url(); ?>/js/demo/datatables-demo.js"></script>
+
+<script>
+    $('#modal_confirma').on('show.bs.modal',function(e){
+        $(this).find('.btn-ok').attr('href',$(e.relatedTarget).data('href'));
+    });
+</script>
     </body>
 </html>

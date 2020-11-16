@@ -1,6 +1,8 @@
 <div class="container-fluid">
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
+    <?php \Config\Services::validation()->listErrors(); ?>
     <form method="POST" action="<?php echo base_url(); ?>/unidades/insertar" autocomplete="off">
+    <?php csrf_field(); ?>
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-6">
