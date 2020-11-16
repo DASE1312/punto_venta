@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <a href="<?php echo base_url(); ?>/unidades" class="btn btn-primary">Regresar</a>
+    <a href="<?php echo base_url(); ?>/productos" class="btn btn-primary">Regresar</a>
     <button tyoe="submit" class="btn btn-success">Guardar</button>
     </form>
 </div>

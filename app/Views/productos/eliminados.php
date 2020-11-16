@@ -2,27 +2,32 @@
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
     <div>
         <p>
-            <a href="<?php echo base_url(); ?>/unidades" class="btn btn-warning">Unidades</a>
+            <a href="<?php echo base_url(); ?>/productos" class="btn btn-warning">Productos</a>
         </p>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    <th>Id</th>
+                <th>Id</th>
+                    <th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Nombre corto</th>
+                    <th>Precio</th>
+                    <th>Existencia</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($datos as $dato){ ?>
                     <tr>
-                        <td><?php echo $dato['id']; ?></td>
+                    <td><?php echo $dato['id']; ?></td>
+                        <td><?php echo $dato['codigo']; ?></td>
                         <td><?php echo $dato['nombre']; ?></td>
-                        <td><?php echo $dato['nombre_corto']; ?></td>
+                        <td><?php echo $dato['precio_venta']; ?></td>
+                        <td><?php echo $dato['existencia']; ?></td>
 
-                        <td><a href="#" data-href="<?php echo base_url().'/unidades/reingresar/'.$dato['id']; ?>" data-toggle="modal" data-target="#modal_confirma" data-placement="top" title="Reingresar registro registro" ><i class="fas fa-arrow-alt-circle-up"></i></a></td>
+
+                        <td><a href="#" data-href="<?php echo base_url().'/productos/reingresar/'.$dato['id']; ?>" data-toggle="modal" data-target="#modal_confirma" data-placement="top" title="Reingresar registro registro" ><i class="fas fa-arrow-alt-circle-up"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>
