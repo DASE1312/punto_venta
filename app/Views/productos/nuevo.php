@@ -1,18 +1,22 @@
 <div class="container-fluid">
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
-    <?php \Config\Services::validation()->listErrors();?>
+    
+    <?php if (isset($validation)) {?>
+        <div class="alert alert-danger">
+            <?php echo $validation->listErrors(); ?>
+        </div>
+    <?php }?>
+    
     <form method="POST" action="<?php echo base_url(); ?>/productos/insertar" autocomplete="off">
-    <?php csrf_field();?>
-
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="">Codigo</label>
-                <input class="form-control" id="codigo" name="codigo" type="text" autofocus required>
+                <input class="form-control" id="codigo" name="codigo" value="<?php echo set_value('codigo') ?>" type="text" autofocus required>
             </div>
             <div class="col-12 col-sm-6">
                 <label for="">Nombre</label>
-                <input class="form-control" id="nombre" name="nombre" type="text" required>
+                <input class="form-control" id="nombre" value="<?php echo set_value('nombre') ?>" name="nombre" type="text" required>
             </div>
         </div>
     </div>
@@ -44,7 +48,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="">Precio_venta</label>
-                <input class="form-control" id="precio_venta" name="precio_venta" type="text" autofocus required>
+                <input class="form-control" id="precio_venta" name="precio_venta" type="text" required>
             </div>
             <div class="col-12 col-sm-6">
                 <label for="">Precio_compra</label>
@@ -57,7 +61,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="">Stock_minimo</label>
-                <input class="form-control" id="stock_minimo" name="stock_minimo" type="text" autofocus required>
+                <input class="form-control" id="stock_minimo" name="stock_minimo" type="text" required>
             </div>
             <div class="col-12 col-sm-6">
                 <label for="">Es inventariable</label>
@@ -68,9 +72,8 @@
             </div>
         </div>
     </div>
-
-    <a href="<?php echo base_url(); ?>/productos" class="btn btn-primary">Regresar</a>
-    <button tyoe="submit" class="btn btn-success">Guardar</button>
+    <button type="submit" class="btn btn-success float-right ml-2">Guardar</button>                    
+    <a href="<?php echo base_url(); ?>/productos" class="btn btn-primary float-right">Regresar</a>
     </form>
 </div>
 

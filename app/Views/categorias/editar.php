@@ -10,8 +10,8 @@
             </div>
         </div>
     </div>
-    <a href="<?php echo base_url(); ?>/categorias" class="btn btn-primary">Regresar</a>
-    <button tyoe="submit" class="btn btn-success">Guardar</button>
+    <button tyoe="submit" class="btn btn-success float-right">Guardar</button>
+    <a href="<?php echo base_url(); ?>/categorias" class="btn btn-primary float-right ml-2">Regresar</a>
     </form>
 </div>
 
