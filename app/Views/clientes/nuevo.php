@@ -19,6 +19,10 @@
                 <label for="">Direccion</label>
                 <input class="form-control" id="direccion" name="direccion" value="<?php echo set_value('direccion') ?>" type="text" required>
             </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="">Telefono</label>
                 <input class="form-control" id="telefono" name="telefono" value="<?php echo set_value('telefono') ?>" type="text" required>

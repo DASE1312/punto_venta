@@ -19,9 +19,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opciones</h6>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/categorias">Categorias</a>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/productos">Productos</a>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/unidades">Unidades</a>
-                <a class="collapse-item" href="<?php echo base_url(); ?>/categorias">Categorias</a>
             </div>
         </div>
     </li>
@@ -53,6 +53,7 @@
         <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opciones</h6>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/cajas">Cajas</a>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/configuracion">Configuracion</a>
             </div>
         </div>
