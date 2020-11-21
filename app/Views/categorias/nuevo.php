@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <label for="">Nombre</label>
-                <input class="form-control" id="nombre" name="nombre" type="text" autofocus require>
+                <input class="form-control" id="nombre" name="nombre" type="text" autofocus required>
             </div>
         </div>
     </div>

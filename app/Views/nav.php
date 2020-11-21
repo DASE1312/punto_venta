@@ -26,6 +26,8 @@
         </div>
     </li>
 
+    <hr class="sidebar-divider">
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -36,6 +38,22 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opciones</h6>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/clientes">Clientes</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour"
+                    aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-tools"></i>
+            <span>Administracion</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Opciones</h6>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/configuracion">Configuracion</a>
             </div>
         </div>
     </li>
