@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <label>Folio</label>
-                <input class="form-control" id="folio" name="folio" type="text" value="<?php echo set_value('folio') ?>" autofocus required>
+                <input class="form-control" id="folio" name="folio" type="text" value="<?php echo set_value('folio') ?>" required>
             </div>
         </div>
     </div>

@@ -12,11 +12,11 @@
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-6">
-                <label for="">Nombre</label>
-                <input class="form-control" id="nombre" name="nombre" type="text" value="<?php echo set_value('nombre') ?>" autofocus required>
+                <label>Nombre</label>
+                <input class="form-control" id="nombre" name="nombre" type="text" value="<?php echo set_value ('nombre') ?>" autofocus required>
             </div>
             <div class="col-12 col-sm-6">
-                <label for="">Direccion</label>
+                <label>Direccion</label>
                 <input class="form-control" id="direccion" name="direccion" value="<?php echo set_value('direccion') ?>" type="text" required>
             </div>
         </div>
@@ -24,11 +24,11 @@
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-6">
-                <label for="">Telefono</label>
+                <label>Telefono</label>
                 <input class="form-control" id="telefono" name="telefono" value="<?php echo set_value('telefono') ?>" type="text" required>
             </div>
             <div class="col-12 col-sm-6">
-                <label for="">Correo</label>
+                <label>Correo</label>
                 <input class="form-control" id="correo" name="correo" value="<?php echo set_value('correo') ?>" type="text" required>
             </div>
         </div>
