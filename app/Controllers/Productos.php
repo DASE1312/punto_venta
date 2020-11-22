@@ -87,7 +87,7 @@ class Productos extends BaseController
                 'inventariable' => $this->request->getPost('inventariable'),
                 'id_unidad' => $this->request->getPost('id_unidad'),
                 'id_categoria' => $this->request->getPost('id_categoria')]);
-            return redirect()->to(\base_url() . '/productos');
+            return redirect()->to(base_url() . '/productos');
         } else {
 
             $unidades = $this->unidades->where('activo', 1)->findAll();
