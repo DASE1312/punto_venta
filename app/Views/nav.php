@@ -51,10 +51,27 @@ $user_session = session();
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour"
                     aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-cash-register"></i>
+            <span>Compras</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Opciones</h6>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/compras/nuevo">Nueva compra</a>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/compras">Compras</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefive"
+                    aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-tools"></i>
             <span>Administracion</span>
         </a>
-        <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsefive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opciones</h6>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/cajas">Cajas</a>

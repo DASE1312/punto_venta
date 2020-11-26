@@ -93,7 +93,7 @@ class Productos extends BaseController
             $unidades = $this->unidades->where('activo', 1)->findAll();
             $categorias = $this->categorias->where('activo', 1)->findAll();
 
-            $data = ['titulo' => 'Agregar producto', 'unidades' => $unidades, 'categorias' => $categorias,'validation' => $this->validator];
+            $data = ['titulo' => 'Agregar producto', 'unidades' => $unidades, 'categorias' => $categorias, 'validation' => $this->validator];
 
             echo view('header');
             echo view('nav');
@@ -144,6 +144,31 @@ class Productos extends BaseController
     {
         $this->productos->update($id, ['activo' => 1]);
         return redirect()->to(\base_url() . '/productos');
+    }
+
+    public function buscarPorCodigo($codigo)
+    {
+        $this->productos->select('*');
+        $this->productos->where('codigo', $codigo);
+        $this->productos->where('activo', 1);
+
+        $datos = $this->productos->get()->getRow();
+
+        $res['existe'] = false;
+        $res['datos'] = '';
+        $res['error'] = '';
+
+        if ($datos) {
+            $res['datos'] = $datos;
+            $res['existe']=true;
+            
+        } else {
+            $res['error'] = 'No existe el producto';
+            $res['existe'] = false;
+        }
+
+        echo json_encode($res);
+
     }
 
 }

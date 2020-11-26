@@ -10865,6 +10865,48 @@ if ( typeof noGlobal === "undefined" ) {
 	window.jQuery = window.$ = jQuery;
 }
 
+$(document).ready(function () {
+
+});
+
+function buscarProducto(e, tagCodigo, codigo) {
+    var enterKey = 13;
+    if (codigo != "") {
+
+        if (e.which == enterKey) {
+
+            $.ajax({
+                url: '<?php echo base_url(); ?>/productos/buscarPorCodigo/' + codigo,
+                data: 'json',
+                success: function (resultado) {
+
+                    if (resultado == 0) {
+                        $(tagCodigo).val('');
+                    } else {
+                        $(tagCodigo).removeClass("has-error");
+
+                        $("#resultado_error").html(resultado.error);
+
+                        if(resultado.existe){
+                            $("#id_producto").val(resultado.datos.id);
+                            $("#nombre").val(resultado.datos.nombre);
+                            $("#cantidad").val(resultado.datos.cantidad);
+                            $("#precio_compra").val(resultado.datos.precio_compra);
+                            $("#subtotal").val(resultado.datos.precio_compra);
+                            $("#cantidad").focus();
+                        }else{
+                            $("#id_producto").val('');
+                            $("#nombre").val('');
+                            $("#cantidad").val('');
+                            $("#precio_compra").val('');
+                            $("#subtotal").val('');
+                        }
+                    }
+                }
+            })
+        }
+    }
+}
 
 
 

@@ -25,7 +25,7 @@ class Usuarios extends BaseController
                 'rules' => 'required|is_unique[usuarios.usuario]',
                 'errors' => [
                     'required' => 'El campo {field} es obligatorio.',
-                    'is_unique' => 'El campo {field} es obligatorio.',
+                    'is_unique' => 'El usuario {field} ya existe.',
                 ],
             ],
             'password' => [
@@ -164,16 +164,15 @@ class Usuarios extends BaseController
 
     }
 
-    public function editar($id, $valid = null)
+    public function editar($id)
     {
 
-        $unidad = $this->usuarios->where('id', $id)->first();
+        $cajas = $this->cajas->where('activo', 1)->findAll();
+        $roles = $this->roles->where('activo', 1)->findAll();
 
-        if ($valid != null) {
-            $data = ['titulo' => 'Editar unidad', 'datos' => $unidad, 'validation' => $valid];
-        } else {
-            $data = ['titulo' => 'Editar unidad', 'datos' => $unidad];
-        }
+        $usuarios = $this->usuarios->where('id', $id)->first();
+
+        $data = ['titulo' => 'Editar producto', 'usuarios' => $usuarios, 'cajas' => $cajas, 'roles' => $roles];
 
         echo view('header');
         echo view('nav');
@@ -183,15 +182,14 @@ class Usuarios extends BaseController
 
     public function actualizar()
     {
+        
+        $this->usuarios->update($this->request->getPost('id'), [
+            'usuario' => $this->request->getPost('usuario'),
+            'nombre' => $this->request->getPost('nombre'),
+            'id_caja' => $this->request->getPost('id_caja'),
+            'id_rol' => $this->request->getPost('id_rol'),]);
 
-        if ($this->request->getMethod() == "post" && $this->validate($this->reglas)) {
-            $this->usuarios->update($this->request->getPost('id'), [
-                'nombre' => $this->request->getPost('nombre'),
-                'nombre_corto' => $this->request->getPost('nombre_corto')]);
             return redirect()->to(base_url() . '/usuarios');
-        } else {
-            return $this->editar($this->request->getPost('id'), $this->validator);
-        }
     }
 
     public function eliminar($id)

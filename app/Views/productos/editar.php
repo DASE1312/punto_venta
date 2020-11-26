@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
-    <?php \Config\Services::validation()->listErrors();?>
+    
     <form method="POST" action="<?php echo base_url(); ?>/productos/actualizar" autocomplete="off">
-    <?php csrf_field();?>
+   
 
     <input type="hidden" name="id" id="id" value="<?php echo $producto['id']; ?>">
 

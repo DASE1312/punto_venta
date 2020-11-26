@@ -2,7 +2,7 @@
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
     <div>
         <p>
-            <a href="<?php echo base_url(); ?>/usuarios" class="btn btn-warning">Usuarios</a>
+            <a href="<?php echo base_url(); ?>/unidades" class="btn btn-warning">Unidades</a>
         </p>
     </div>
     <div class="table-responsive">
@@ -10,11 +10,8 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Usuario</th>
                     <th>Nombre</th>
-                    <th>Caja</th>
-                    <th>Rol</th>
-                    <th>Ultimo inicio</th>
+                    <th>Nombre corto</th>
                     <th></th>
                 </tr>
             </thead>
@@ -22,12 +19,10 @@
                 <?php foreach($datos as $dato){ ?>
                     <tr>
                         <td><?php echo $dato['id']; ?></td>
-                        <td><?php echo $dato['usuario']; ?></td>
                         <td><?php echo $dato['nombre']; ?></td>
-                        <td><?php echo $dato['id_caja']; ?></td>
-                        <td><?php echo $dato['id_rol']; ?></td>
+                        <td><?php echo $dato['nombre_corto']; ?></td>
 
-                        <td><a href="#" data-href="<?php echo base_url().'/usuarios/reingresar/'.$dato['id']; ?>" data-toggle="modal" data-target="#modal_confirma" data-placement="top" title="Reingresar registro registro" ><i class="fas fa-arrow-alt-circle-up"></i></a></td>
+                        <td><a href="#" data-href="<?php echo base_url().'/unidades/reingresar/'.$dato['id']; ?>" data-toggle="modal" data-target="#modal_confirma" data-placement="top" title="Reingresar registro registro" ><i class="fas fa-arrow-alt-circle-up"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

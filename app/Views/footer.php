@@ -9,7 +9,7 @@
 </div>
 </div>
 <!-- Bootstrap core JavaScript-->
-<script src="<?php echo base_url(); ?>/assets/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
 <script src="<?php echo base_url(); ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="<?php echo base_url(); ?>/assets/jquery-easing/jquery.easing.min.js"></script>
@@ -21,6 +21,10 @@
 
 <!-- Page level custom scripts -->
 <script src="<?php echo base_url(); ?>/js/demo/datatables-demo.js"></script>
+
+<!--para llamar los script que se hagan en un archivo js-->
+<script type="text/javascript">var BASE_URL = "<?php echo base_url();?>";</script>
+
 
 <script>
     $('#modal_confirma').on('show.bs.modal',function(e){
