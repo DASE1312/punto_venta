@@ -1,11 +1,16 @@
+<?php
+$id_compra = uniqid();
+?>
+
 <div class="container-fluid">
 
-    <form method="POST" action="<?php echo base_url(); ?>/compras/guardar" autocomplete="off">
-    
+    <form method="POST" id="form_compra" name="form_compra" action="<?php echo base_url(); ?>/compras/guardar" autocomplete="off">
+
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-4">
-                
+                <input type="hidden" id="id_producto" name="id_producto">
+                <input type="hidden" id="id_compra" name="id_compra" value="<?php echo $id_compra ?>">
                 <label>Codigo</label>
 
                 <input class="form-control" id="codigo" name="codigo" type="text" onkeyup="buscarProducto(event,this,this.value)" autofocus placeholder="Esribe el codigo y presiona enter">
@@ -20,7 +25,7 @@
 
             <div class="col-12 col-sm-4">
                 <label>Cantidad</label>
-                <input class="form-control" id="cantidad" name="cantidad"  type="text">
+                <input class="form-control" id="cantidad" name="cantidad" type="text">
             </div>
         </div>
     </div>
@@ -32,29 +37,27 @@
             </div>
             <div class="col-12 col-sm-4">
                 <label>Subtotal</label>
-                <input class="form-control" id="subtotal" name="subtotal"  type="text" disabled>
+                <input class="form-control" id="subtotal" name="subtotal" type="text" disabled>
             </div>
             <div class="col-12 col-sm-4">
                 <label><br>&nbsp;</label>
-                <button class="btn btn-primary" type="button" id="agregar_producto" name="agregar_producto">Agregar Producto</button>
+                <button class="btn btn-primary" type="button" id="agregar_producto" name="agregar_producto" onclick="agregarProducto(id_producto.value,cantidad.value, '<?php echo $id_compra; ?>')">Agregar Producto</button>
             </div>
         </div>
     </div>
     <div class="table-responsive table-sm table table-hover table-striped">
-        <table id="tablaProductos" class="table table-bordered tablaProductos" width="100%" cellspacing="0">
-            <thead>
-                <tr class="thead-dark">
+        <table id="tablaProductos" class="table table-bordered tablaProductos" width="100%">
+            <thead class="thead-dark">
                     <th>#</th>
                     <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Total</th>
-                    <th width="1%"></th>
-                </tr>
+                    <th width="1%"></th>              
             </thead>
             <tbody>
-                
+
             </tbody>
         </table>
     </div>
@@ -69,6 +72,7 @@
 </div>
 
 <script src="<?php echo base_url(); ?>/assets/javascript/functions_carro_compra.js"></script>
+
 
 
 
