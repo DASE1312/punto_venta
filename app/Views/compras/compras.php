@@ -2,8 +2,7 @@
     <h4 class="mb-2 text-gray-800"><?php echo $titulo; ?></h4>
     <div>
         <p>
-            <a href="<?php echo base_url(); ?>/unidades/nuevo" class="btn btn-info">Agregar</a>
-            <a href="<?php echo base_url(); ?>/unidades/eliminados" class="btn btn-warning">Eliminados</a>
+            <a href="<?php echo base_url(); ?>/compras/eliminados" class="btn btn-warning">Eliminados</a>
         </p>
     </div>
     <div class="table-responsive">
@@ -11,22 +10,22 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Nombre corto</th>
-                    <th></th>
+                    <th>Folio</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($datos as $dato){ ?>
+                <?php foreach($compras as $compra){ ?>
                     <tr>
-                        <td><?php echo $dato['id']; ?></td>
-                        <td><?php echo $dato['nombre']; ?></td>
-                        <td><?php echo $dato['nombre_corto']; ?></td>
+                        <td><?php echo $compra['id']; ?></td>
+                        <td><?php echo $compra['folio']; ?></td>
+                        <td><?php echo $compra['total']; ?></td>
+                        <td><?php echo $compra['fecha_alta']; ?></td>
 
-                        <td><a href="<?php echo base_url().'/unidades/editar/'.$dato['id'];?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
+                        <td><a href="<?php echo base_url().'/compras/muestraCompraPdf/'.$compra['id'];?>" class="btn btn-primary"><i class="fas fa-file-alt"></i></a></td>
 
-                        <td><a href="#" data-href="<?php echo base_url().'/unidades/eliminar/'.$dato['id']; ?>" data-toggle="modal" data-target="#modal_confirma" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>
