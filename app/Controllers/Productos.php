@@ -160,8 +160,8 @@ class Productos extends BaseController
 
         if ($datos) {
             $res['datos'] = $datos;
-            $res['existe']=true;
-            
+            $res['existe'] = true;
+
         } else {
             $res['error'] = 'No existe el producto';
             $res['existe'] = false;
@@ -171,4 +171,21 @@ class Productos extends BaseController
 
     }
 
+    public function autocompleteData()
+    {
+        $returnData = array();
+
+        $valor = $this->request->getGet('term');
+
+        $productos = $this->productos->like('codigo', $valor)->where('activo', 1)->findAll();
+        if (!empty($productos)) {
+            foreach ($productos as $row) {
+                $data['íd'] = $row['id'];
+                $data['value'] = $row['codigo'];
+                $data['label'] = $row['codigo'] . '-' . $row['nombre'];
+                array_push($returnData, $data);
+            }
+        }
+        echo json_encode($returnData);
+    }
 }

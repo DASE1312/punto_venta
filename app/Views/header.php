@@ -13,9 +13,14 @@
             href="<?php echo base_url(); ?>/css/fontsicon.css">
         <!-- Custom styles for this template -->
         <link href="<?php echo base_url(); ?>/css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>/css/jquery-ui/jquery-ui.css" rel="stylesheet">
         <!-- Custom styles for this page -->
         <link href="<?php echo base_url(); ?>/assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-        <script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>
+        
+        <!--<script src="<?php echo base_url(); ?>/assets/jquery/jquery.js"></script>-->
+        <script src="<?php echo base_url(); ?>/assets/jquery-ui/external/jquery/jquery.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/jquery-ui/jquery-ui.js"></script>
+        
         
         
     </head>

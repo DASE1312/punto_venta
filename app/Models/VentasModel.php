@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DetalleCompraModel extends Model
+class VentasModel extends Model
 {
-    protected $table = 'detalle_compra';
+    protected $table = 'ventas';
     protected $primaryKey = 'id';
 
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_compra', 'id_producto', 'codigo', 'nombre', 'cantidad', 'precio'];
+    protected $allowedFields = ['folio', 'total', 'id_usuario', 'id_caja', 'id_cliente', 'forma_pago', 'activo'];
 
     protected $useTimestamps = true;
     protected $createdField = 'fecha_alta';
@@ -23,12 +23,15 @@ class DetalleCompraModel extends Model
     protected $validationMessages = [];
     protected $skipValidation = false;
 
-    public function insertarCompra($id_compra, $total, $id_usuario)
+    public function insertarVenta($id_venta, $total, $id_usuario, $id_caja, $id_cliente, $forma_pago)
     {
         $this->insert([
-            'folio' => $id_compra,
+            'folio' => $id_venta,
             'total' => $total,
             'id_usuario' => $id_usuario,
+            'id_caja' => $id_caja,
+            'id_cliente' => $id_cliente,
+            'forma_pago' => $forma_pago,
         ]);
         return $this->insertID();
     }

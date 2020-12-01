@@ -78,7 +78,6 @@ class Clientes extends BaseController
             echo view('clientes/nuevo', $data);
             echo view('footer');
         }
-
     }
 
     public function editar($id)
@@ -102,7 +101,8 @@ class Clientes extends BaseController
                 'nombre' => $this->request->getPost('nombre'),
                 'direccion' => $this->request->getPost('direccion'),
                 'telefono' => $this->request->getPost('telefono'),
-                'correo' => $this->request->getPost('correo')]);
+                'correo' => $this->request->getPost('correo'),
+            ]);
             return redirect()->to(\base_url() . '/clientes');
         } else {
             return $this->editar($this->request->getPost('id'), $this->validator);
@@ -121,4 +121,20 @@ class Clientes extends BaseController
         return redirect()->to(\base_url() . '/clientes');
     }
 
+    public function autocompleteData()
+    {
+        $returnData = array();
+
+        $valor = $this->request->getGet('term');
+
+        $clientes = $this->clientes->like('nombre', $valor)->where('activo', 1)->findAll();
+        if (!empty($clientes)) {
+            foreach ($clientes as $row) {
+                $data['íd'] = $row['id'];
+                $data['value'] = $row['nombre'];
+                array_push($returnData, $data);
+            }
+        }
+        echo json_encode($returnData);
+    }
 }

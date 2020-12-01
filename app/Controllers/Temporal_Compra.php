@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ProductosModel;
 use App\Models\TemporalCompraModel;
 
+
 class Temporal_Compra extends BaseController
 {
     protected $temporal_compra, $productos;

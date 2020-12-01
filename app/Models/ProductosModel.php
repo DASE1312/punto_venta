@@ -23,9 +23,9 @@ class ProductosModel extends Model
     protected $validationMessages = [];
     protected $skipValidation = false;
 
-    public function actualizarStock($id_producto, $cantidad)
+    public function actualizarStock($id_producto, $cantidad,$operador='+')
     {
-        $this->set('existencia', "existencia + $cantidad", false);
+        $this->set('existencia', "existencia $operador $cantidad", FALSE);
 
         $this->where('id', $id_producto);
 

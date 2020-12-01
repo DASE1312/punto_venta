@@ -73,6 +73,7 @@ class Compras extends BaseController
                 $this->detalle_compra->save([
                     'id_compra' => $resultadoId,
                     'id_producto' => $row['id_producto'],
+                    'codigo' => $row['codigo'],
                     'nombre' => $row['nombre'],
                     'cantidad' => $row['cantidad'],
                     'precio' => $row['precio'],
@@ -149,7 +150,7 @@ class Compras extends BaseController
 
         foreach ($detalleCompra as $row) {
             $pdf->Cell(14, 5, $contador, 1, 0, 'C');
-            $pdf->Cell(25, 5, $row['id_producto'], 1, 0, 'R');
+            $pdf->Cell(25, 5, $row['codigo'], 1, 0, 'R');
             $pdf->Cell(77, 5, $row['nombre'], 1, 0, 'R');
             $pdf->Cell(25, 5, $row['precio'], 1, 0, 'R');
             $pdf->Cell(25, 5, $row['cantidad'], 1, 0, 'R');

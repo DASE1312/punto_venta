@@ -29,6 +29,7 @@ $id_compra = uniqid();
             </div>
         </div>
     </div>
+    
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-4">
