@@ -230,7 +230,7 @@ class Usuarios extends BaseController
                     $session = session();
                     $session->set($datosSesion);
 
-                    return redirect()->to(base_url() . '/configuracion');
+                    return redirect()->to(base_url() . '/inicio');
                 } else {
                     $data['error'] = "El usuario o la contraseña no coincide";
                     echo view('login', $data);

@@ -3,6 +3,7 @@
     <div>
         <p>
             <a href="<?php echo base_url(); ?>/productos/nuevo" class="btn btn-info">Agregar</a>
+            <a href="<?php echo base_url(); ?>/productos/muestraCodigos" class="btn btn-primary">Codigos de barras</a>
             <a href="<?php echo base_url(); ?>/productos/eliminados" class="btn btn-warning">Eliminados</a>
         </p>
     </div>

@@ -3,7 +3,7 @@ $user_session = session();
 ?>
 
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url(); ?>/inicio">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -96,14 +96,30 @@ $user_session = session();
     </li>
 
     <hr class="sidebar-divider">
-
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseseven"
+                    aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-list"></i>
+            <span>Reportes</span>
+        </a>
+        <div id="collapseseven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Opciones</h6>
+                <a class="collapse-item" href="<?php echo base_url(); ?>/productos/mostrar_minimos">Reporte de minimos</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapeight"
                     aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-tools"></i>
             <span>Administracion</span>
         </a>
-        <div id="collapseseven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapeight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opciones</h6>
                 <a class="collapse-item" href="<?php echo base_url(); ?>/cajas">Cajas</a>

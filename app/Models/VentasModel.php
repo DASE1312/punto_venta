@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use phpDocumentor\Reflection\Types\String_;
-use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
 class VentasModel extends Model
 {
@@ -42,15 +40,27 @@ class VentasModel extends Model
     {
         $this->select('ventas.*,u.usuario AS cajero,c.nombre AS cliente');
 
-        $this->join('usuarios AS u','ventas.id_usuario=u.id');
-        $this->join('clientes AS c','ventas.id_cliente=c.id');
+        $this->join('usuarios AS u', 'ventas.id_usuario=u.id');
+        $this->join('clientes AS c', 'ventas.id_cliente=c.id');
 
-        $this->where('ventas.activo',$activo);
+        $this->where('ventas.activo', $activo);
 
-        $this->orderBy('ventas.fecha_alta','DESC');
+        $this->orderBy('ventas.fecha_alta', 'DESC');
 
-        $datos=$this->findAll();
+        $datos = $this->findAll();
         return $datos;
 
+    }
+
+    public function totalDia($fecha)
+    {
+        $this->select("SUM(total) AS total");
+        $where = "activo=1 AND DATE(fecha_alta)='$fecha'";
+        return $this->where($where)->first();
+
+        /* para ver nuestro query*/
+        //print_r($this->getLastQuery());
+
+        
     }
 }
