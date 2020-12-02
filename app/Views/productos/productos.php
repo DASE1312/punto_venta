@@ -12,6 +12,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Codigo</th>
+                    <th>Imagen</th>
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Existencia</th>
@@ -24,6 +25,9 @@
                     <tr>
                         <td><?php echo $dato['id']; ?></td>
                         <td><?php echo $dato['codigo']; ?></td>
+
+                        <td><img src="<?php echo base_url().'/img/productos/'.$dato['id'].'.jpeg'; ?>" width="100" alt=""></td>
+
                         <td><?php echo $dato['nombre']; ?></td>
                         <td><?php echo $dato['precio_venta']; ?></td>
                         <td><?php echo $dato['existencia']; ?></td>

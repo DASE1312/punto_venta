@@ -7,7 +7,7 @@
         </div>
     <?php }?>
     
-    <form method="POST" action="<?php echo base_url(); ?>/productos/insertar" autocomplete="off">
+    <form method="POST" enctype="multipart/form-data" action="<?php echo base_url(); ?>/productos/insertar" autocomplete="off">
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-6">
@@ -69,6 +69,16 @@
                     <option value="1">Si</option>
                     <option value="1">No</option>
                 </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <label>Imagen del producto</label><br />
+                <input type="file" name="img_productos" id="img_productos" accept="image/jpeg">
+                <p class="text-danger">Cargar en imagen en formato png en 150x150 pixeles</p>
             </div>
         </div>
     </div>

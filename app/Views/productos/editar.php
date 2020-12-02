@@ -71,6 +71,17 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <label>Imagen del producto</label><br />
+                <img class="img-responsive" width="200" src="<?php echo base_url().'/img/productos/'.$producto['id'].'.jpeg'; ?>" alt=""><br />
+                <input type="file" name="img_productos" id="img_productos" accept="image/jpeg">
+                <p class="text-danger">Cargar en imagen en formato png en 150x150 pixeles</p>
+            </div>
+        </div>
+    </div>
+
     <a href="<?php echo base_url(); ?>/productos" class="btn btn-primary">Regresar</a>
     <button tyoe="submit" class="btn btn-success">Guardar</button>
     </form>
